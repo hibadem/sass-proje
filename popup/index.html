@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html ; charset=utf-8">
+        <meta http-equiv="Content-Language" content="text/html ; charset=utf-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Competible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>Proje</title>
+        <!-- Dosya tanımlamaları -->
+        <link type="text/css" rel="stylesheet" href="assets/css/app.css">
+        <script src="assets/js/app.js"></script>
+    
+    </head>
+<body>
+    <div id="app">
+        <div class="alert">
+            
+        </div>
+        <label for="popup-1">
+            Share
+        </label>
+        <input type="checkbox"  id="popup-1" class="popup-toggle">
+        <div class="popup">
+            <div class="popup-inner share-popup">
+                <label for="popup-1" class="popup-close">
+                    <img src="assets/img/close.svg" alt="">
+                </label>
+                <h4>Share this design</h4>
+                <ul>
+                    <li><a href="">
+                        <img src="assets/img/twitter.svg" alt="">
+                    </a></li>
+                    <li><a href="">
+                        <img src="assets/img/facebook.svg" alt="">
+                    </a></li>
+                    <li><a href="">
+                        <img src="assets/img/instagram.svg" alt="">
+                    </a></li>                    
+                    <li><a href="">
+                        <img src="assets/img/linkedin.svg" alt="">
+                    </a></li>   
+                    <li><a href="">
+                        <img src="assets/img/pinterest.svg" alt="">
+                    </a></li><li><a href="">
+                        <img src="assets/img/tumblr.svg" alt="">
+                    </a></li>      
+                </ul>
+                <h6>Or copy link</h6>
+                <div class="input">
+                    <input type="text" readonly id="copy-text" value="https://www.uidesigndaily.com/posts/5d6ab9ea91deae0012006d44">
+                    <button type="button" onclick="copy('copy-text')">Copy</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

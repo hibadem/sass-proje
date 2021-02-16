@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Mulish',sans-serif;
+    &:focus{
+        outline: none;
+    }
+}
+body{
+    background-color: #EBEEF2;
+    padding: 20px;
+}
+.component{
+    &--pricing{
+        max-width: 920px;
+        margin: 0 auto;
+        .title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 55px;
+            h3{
+                font-style: normal;
+                font-weight: 900;
+                font-size: 42px;
+                line-height: 53px;
+            }
+            label{
+                width: 212px;
+                height: 50px;
+                background-color: #D4D9E0;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 1;
+                span{   
+                    width: 100px;
+                    height: 40px;
+                    display: grid;
+                    place-items: center;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #171922;
+                    cursor: pointer;
+                    &::before{
+                        content: '';
+                        width: 100px;
+                        height: 40px;
+                        background-color: #fff;
+                        border-radius: 25px;
+                        box-shadow: 0px 15px 13px -12px rgba(134, 147, 164, 0.739565);
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        z-index: -1;
+                        transition: 400ms left ease-in-out;
+                    }
+                }
+            }
+        }
+        .packages{
+            display: flex;
+            margin: 0 -40px;
+            
+            .package{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                margin: 0 40px;
+                background-color: #fff;
+                padding: 45px;
+                position: relative;
+                transition: 400ms box-shadow ease-in-out;
+                &:hover{
+                    box-shadow: 0 19px 50px -20px rgba($color: #8693a4, $alpha: .74);
+                    .button{
+                        background-color: #171922;
+                        color: #fff;
+                    }
+                }
+                h6{
+                    font-weight: bold;
+                    font-size: 28px;
+                    line-height: 35px;
+                    color: #171922;
+                    margin-bottom: 35px;
+
+                }
+                .price-info{
+                    margin-bottom: 30px;
+                    .title{
+                        font-weight: bold;
+                        font-size: 22px;
+                        line-height: 28px;
+                        color: #171922;
+                        margin-bottom: 10px;
+                        span{
+                            &::before{
+                                content: attr(data-monthly-price);
+                            }
+                        }
+                    }
+                    .description{
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 23px;
+                        color: #171922;
+                        opacity: .71;
+                        span{
+                            &::before{
+                                content: attr(data-monthly-text);
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                p{
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: #171922;
+                    opacity: .71;
+                    margin-bottom: 35px;
+                    
+                    
+                    
+                }
+                .button{                  
+                    width: 100%;    
+                    padding: 1rem;            
+                    margin-top: auto;
+                    display: grid;
+                    place-items: center;
+                    border: 1px solid #171922;
+                    border-radius: 5px;
+                    background-color: white;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 23px;
+                    color: #171922;
+                    transition: 400ms background-color ease-in-out, 400ms color ease-in-out;
+                }
+            }
+            
+        }
+        #price-switch{
+            display: none;
+            &:checked{
+                & + .title {
+                    span::before{
+                        left: 105px;
+                    }
+                    & + .packages{
+                        .package {
+                            .price-info{
+                                .title span::before{
+                                    content: attr(data-yearly-price);
+                                }
+                                .description span::before{
+                                    content: attr(data-yearly-text);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
